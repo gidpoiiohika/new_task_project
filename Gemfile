@@ -20,6 +20,7 @@ gem 'rubocop-rails', require: false
 gem "haml-rails"
 gem "faker"
 gem 'devise'
+gem "rolify"
 
 group :development, :test do
   gem "rspec-rails"
