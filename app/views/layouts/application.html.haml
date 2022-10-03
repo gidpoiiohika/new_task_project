@@ -7,4 +7,25 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   %body
-    = yield
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      .container
+        %a.navbar-brand.me-2{:href => ""}
+          %img{:alt => "MDB Logo", :height => "16", :loading => "lazy", :src => "https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp", :style => "margin-top: -1px;"}/
+        / Toggle button
+        %button.navbar-toggler{"aria-controls" => "navbarButtonsExample", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-mdb-target" => "#navbarButtonsExample", "data-mdb-toggle" => "collapse", :type => "button"}
+          %i.fas.fa-bars
+        #navbarButtonsExample.collapse.navbar-collapse
+          %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            %li.nav-item Dasboard
+          .d-flex.align-items-center.ms-4
+            - if current_user.present?
+              = link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "btn btn-outline-secondary"
+            - else
+              = link_to 'Sign in', new_user_session_path, class: "btn btn-outline-secondary"
+              = link_to 'Sign up', new_user_registration_path, class: "btn btn-outline-secondary ms-2"
+    .container.pt-4          
+      = yield
+    - if current_user.present?
+      %footer.text-center.text-white{:style => "background-color: #f1f1f1;"}
+        .text-center.text-dark.p-3{:style => "background-color: rgba(0, 0, 0, 0.2);"}
+          %h6="Today's activity: 5 tickets updated | 6 tickets created"
