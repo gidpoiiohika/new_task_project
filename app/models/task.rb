@@ -15,4 +15,7 @@ class Task < ApplicationRecord
   scope :task_count_created, lambda { where(created_at: Date.today.all_day).count }
   scope :task_count_updated, lambda { where(updated_at: Date.today.all_day).count }
   scope :current_user_task, lambda { where(user_id: Current.user.id)}
+    scope :filter_by_priority, -> (priority) { 
+    priority.present? ? where(priority: priority) : where(priority: Task.priorities.values)
+  }
 end
