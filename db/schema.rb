@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_03_204657) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_04_012202) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_03_204657) do
     t.datetime "updated_at", null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.string "description", default: "", null: false
+    t.bigint "user_id", null: false
+    t.bigint "list_id", null: false
+    t.boolean "soft_deleted", default: false
+    t.integer "priority", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_tasks_on_list_id"
+    t.index ["priority"], name: "index_tasks_on_priority"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,4 +63,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_03_204657) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  create_table "versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.bigint "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  end
+
+  add_foreign_key "tasks", "lists"
+  add_foreign_key "tasks", "users"
 end

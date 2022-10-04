@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       super
     else
-      redirect_to new_user_session_url, notice: 'notice'
+      redirect_to new_user_session_url, notice: 'Signed out successfully.'
     end
   end
 
@@ -16,5 +16,11 @@ class ApplicationController < ActionController::Base
     attributes = [:first_name, :last_name, :password, :password_confirmation, :email]
     devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
     devise_parameter_sanitizer.permit(:account_update, keys: attributes)
+  end
+
+  private
+
+  def set_current_user
+    Current.user = current_user
   end
 end

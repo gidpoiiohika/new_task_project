@@ -1,0 +1,15 @@
+%table.table
+  %thead
+    %tr
+      %th{:scope => "col"} Title
+      %th{:scope => "col"} Description
+      %th{:scope => "col"} Status
+      %th{:scope => "col"} priority
+
+  %tbody
+    - @tasks_versions.reverse.each do |version|
+      %tr
+        %td= version.reify.title
+        %td= version.reify.description
+        %td=List.list_name(version.reify&.list_id)
+        %td= version.reify.priority

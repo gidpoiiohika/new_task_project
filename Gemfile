@@ -21,6 +21,8 @@ gem "haml-rails"
 gem "faker"
 gem 'devise'
 gem "rolify"
+gem 'toastr-rails'
+gem 'paper_trail'
 
 group :development, :test do
   gem "rspec-rails"

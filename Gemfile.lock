@@ -152,6 +152,9 @@ GEM
     nokogiri (1.13.8-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    paper_trail (13.0.0)
+      activerecord (>= 5.2)
+      request_store (~> 1.1)
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
@@ -195,6 +198,8 @@ GEM
     regexp_parser (2.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
+    request_store (1.5.1)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -253,6 +258,8 @@ GEM
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
+    toastr-rails (1.0.3)
+      railties (>= 3.1.0)
     turbo-rails (1.3.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -294,6 +301,7 @@ DEPENDENCIES
   haml-rails
   jbuilder
   jsbundling-rails
+  paper_trail
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
@@ -304,6 +312,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  toastr-rails
   turbo-rails
   tzinfo-data
   web-console

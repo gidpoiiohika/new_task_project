@@ -1,0 +1,13 @@
+= form_for @task do |f|
+  .form-outline.mb-4
+    %label.form-label{:for => "form4Example1"} Title
+    = f.text_field :title, class: "form-control", required: "required"
+  .form-outline.mb-4
+    = f.select(:list_id, options_for_select(List.all.map { |category| [category.name, category.id]}, selected: @task.list_id), { include_blank: 'Select Status' }, {class: "form-control", required: "required"}) 
+  .form-outline.mb-4
+    = f.select(:priority, options_for_select(Task.priorities.map{|k,v| [k.to_s, k.to_s]}, selected: @task.priority), { include_blank: 'Select Priority' }, {class: "form-control", required: "required"})
+  .form-outline.mb-4
+    %label.form-label{:for => "form4Example3"} Message
+    = f.text_area(:description, size: '50x10', class: "form-control", required: "required")
+
+  = f.submit 'Save', class: "btn btn-primary btn-block mb-4"
