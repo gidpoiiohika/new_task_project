@@ -23,6 +23,7 @@ gem 'devise'
 gem "rolify"
 gem 'toastr-rails'
 gem 'paper_trail'
+gem 'local_time'
 
 group :development, :test do
   gem "rspec-rails"

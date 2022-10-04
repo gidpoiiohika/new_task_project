@@ -129,6 +129,7 @@ GEM
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
     json (2.6.2)
+    local_time (2.1.0)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -301,6 +302,7 @@ DEPENDENCIES
   haml-rails
   jbuilder
   jsbundling-rails
+  local_time
   paper_trail
   pg (~> 1.1)
   puma (~> 5.0)

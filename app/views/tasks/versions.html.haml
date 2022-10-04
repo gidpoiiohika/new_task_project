@@ -5,6 +5,7 @@
       %th{:scope => "col"} Description
       %th{:scope => "col"} Status
       %th{:scope => "col"} priority
+      %th{:scope => "col"} Updated
 
   %tbody
     - @tasks_versions.reverse.each do |version|
@@ -13,3 +14,4 @@
         %td= version.reify.description
         %td=List.list_name(version.reify&.list_id)
         %td= version.reify.priority
+        %td= local_time(version.reify.updated_at, format: '%B %e, %Y %l:%M%P')
