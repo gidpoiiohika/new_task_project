@@ -1,5 +1,14 @@
 ## Link to heroku
-Heroku [link](https://dashboard.heroku.com/apps/task-project-new/logs)
+Heroku [link](https://task-project-new.herokuapp.com/)
+
+- User Email
+```shell
+testuser@gmail.com
+```
+- User Password
+```shell
+123456
+```
 
 ## Prerequisites
 
