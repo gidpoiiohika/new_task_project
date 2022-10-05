@@ -8,6 +8,16 @@ a {
   text-decoration: none !important;
 }
 
+.cascading-right {
+  margin-right: -50px;
+}
+
+@media (max-width: 991.98px) {
+  .cascading-right {
+    margin-right: 0;
+  }
+}
+
 .form-aplication {
   margin-block-end: 0px !important;
 }
