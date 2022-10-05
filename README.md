@@ -38,33 +38,38 @@ Using [Bundler](https://github.com/bundler/bundler):
 bundle install
 ```
 ### Initialize the database
+- seed (https://github.com/gidpoiiohika/new_task_project/blob/master/db/seeds.rb)
 
 ```shell
-rails db:create db:migrate db:seed
+rails db:create db:migrate db:seed 
 ```
 
 ## Run rails server
 
 ```shell
-rails s
+bin/dev
 ```
 
 Open [http://127.0.0.1:3000/](http://127.0.0.1:3000)
 
-```
-TODO
-```
+## Gems
 
-[gem 'rubocop-rails'](https://github.com/rubocop/rubocop-rails)
-[gem "haml-rails"](https://github.com/haml/haml-rails)
-[gem "faker"](https://github.com/faker-ruby/faker)
-[gem 'devise'](https://github.com/heartcombo/devise)
-[gem "rolify"](https://github.com/RolifyCommunity/rolify)
-[gem 'toastr-rails'](https://github.com/CodeSeven/toastr)
-[gem 'local_time'](https://github.com/basecamp/local_time)
-[gem 'paper_trail'](https://github.com/paper-trail-gem/paper_trail)
-[gem "rspec-rails"](https://github.com/rspec/rspec-rails)
-[gem "factory_bot_rails" ](https://github.com/thoughtbot/factory_bot_rails)
-[gem "byebug"](https://github.com/deivid-rodriguez/byebug)
+- [gem 'rubocop-rails'](https://github.com/rubocop/rubocop-rails)
+- [gem "haml-rails"](https://github.com/haml/haml-rails)
+- [gem "faker"](https://github.com/faker-ruby/faker)
+- [gem 'devise'](https://github.com/heartcombo/devise)
+- [gem "rolify"](https://github.com/RolifyCommunity/rolify)
+- [gem 'toastr-rails'](https://github.com/CodeSeven/toastr)
+- [gem 'local_time'](https://github.com/basecamp/local_time)
+- [gem 'paper_trail'](https://github.com/paper-trail-gem/paper_trail)
+- [gem "rspec-rails"](https://github.com/rspec/rspec-rails)
+- [gem "factory_bot_rails" ](https://github.com/thoughtbot/factory_bot_rails)
+- [gem "byebug"](https://github.com/deivid-rodriguez/byebug)
+
+
+
+
+https://user-images.githubusercontent.com/25199412/193970463-56c79edf-7610-4401-9aef-ab349687e504.mov
+
 
 
