@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       super
     else
-      redirect_to new_user_session_url, notice: 'Signed out successfully.'
+      redirect_to new_user_session_url
     end
   end
 
