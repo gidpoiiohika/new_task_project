@@ -1,17 +1,16 @@
-%turbo-frame#table
-  %section.lists-container
-    - @lists.each do |list|
-      .list
-        %h3.list-title= list.name
-        %ul.list-items
-          - list.tasks.current_user_task.by_priority.not_deleted.filter_by_priority(params[:priority]).each do |task|
-            %li
-              = task&.title
-              %hr.text-success Priority ->
-              %strong.text-warning= task&.priority
-              %hr.text-success
-              = link_to 'Delete', soft_delete_task_path(task), data: { method: :put}, class: "btn btn-outline-dark"
-              |
-              = link_to 'Edit', edit_task_path(task), class: "btn btn-outline-secondary"
-              |
-              = link_to 'Versions', versions_task_path(task), class: "btn btn-outline-info"
+%section.lists-container
+  - @lists.each do |list|
+    .list
+      %h3.list-title= list.name
+      %ul.list-items
+        - list.tasks.current_user_task.by_priority.not_deleted.filter_by_priority(params[:priority]).each do |task|
+          %li
+            = task&.title
+            %hr.text-success Priority ->
+            %strong.text-warning= task&.priority
+            %hr.text-success
+            = link_to 'Delete', soft_delete_task_path(task), class: "btn btn-outline-dark"
+            |
+            = link_to 'Edit', edit_task_path(task), class: "btn btn-outline-secondary"
+            |
+            = link_to 'Versions', versions_task_path(task), class: "btn btn-outline-info"

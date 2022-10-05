@@ -10,8 +10,20 @@
   %tbody
     - @tasks_versions.reverse.each do |version|
       %tr
-        %td= version.reify.title
-        %td= version.reify.description
-        %td=List.list_name(version.reify&.list_id)
-        %td= version.reify.priority
+        %td
+          = "Old version: #{version.reify(dup: true).title}"
+          %br
+          = "New version: #{field_update(version.reify(dup: true).title, version.item.title)}"
+        %td
+          = "Old version: #{version.reify(dup: true).description}"
+          %br
+          = "New version: #{field_update(version.reify(dup: true).description, version.item.description)}"
+        %td
+          = "Old version: #{List.list_name(version.reify(dup: true)&.list_id)}"
+          %br
+          = "New version: #{field_update(List.list_name(version.reify(dup: true)&.list_id), List.list_name(version.item&.list_id))}"
+        %td
+          = "Old version: #{version.reify(dup: true).priority}"
+          %br
+          = "New version: #{field_update(version.reify(dup: true).priority, version.item.priority)}"
         %td= local_time(version.reify.updated_at, format: '%B %e, %Y %l:%M%P')

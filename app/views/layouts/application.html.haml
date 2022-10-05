@@ -19,7 +19,7 @@
               = link_to 'Dashboard', root_url, class: "nav-link"
           - if current_user.present?
             .d-flex.align-items-center
-              = form_with(url: tasks_path, class: "form-aplication", method: :get, data: { controller: "filters", filters_target: "form", turbo_frame: "table" }) do |f|
+              = form_with(url: tasks_path, class: "form-aplication", method: :get, data: { controller: "filters", filters_target: "form" }) do |f|
                 .filters-group
                   = f.select :priority, options_for_select(Task.priorities.to_a, params[:priority]), { include_blank: 'All Priority' }, { class: "form-select", data: { action: "filters#submit" } }
           .d-flex.align-items-center.ms-4
