@@ -38,7 +38,7 @@ Using [Bundler](https://github.com/bundler/bundler):
 bundle install
 ```
 ### Initialize the database
-- seed (https://github.com/gidpoiiohika/new_task_project/blob/master/db/seeds.rb)
+- seeds.rb [seed](https://github.com/gidpoiiohika/new_task_project/blob/master/db/seeds.rb#L4)
 
 ```shell
 rails db:create db:migrate db:seed 
