@@ -19,10 +19,8 @@ class TasksController < ApplicationController
       if @task.save
         format.turbo_stream { redirect_to root_url, notice: "Task was successfully created." }
         format.html { redirect_to root_url, notice: "Task was successfully created." }
-        format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -32,7 +30,6 @@ class TasksController < ApplicationController
       if @task.update(task_params)
         format.turbo_stream { redirect_to root_url, notice: "Task was successfully updated." }
         format.html { redirect_to root_url, notice: "Task was successfully updated." }
-        format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -44,7 +41,6 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.turbo_stream { redirect_to root_url, notice: "Task was successfully deleted." }
       format.html { redirect_to root_url, notice: 'Task was successfully deleted.' }
-      format.json { head :no_content }
     end
   end
 
