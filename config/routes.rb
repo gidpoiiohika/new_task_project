@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get    'register' =>  'devise/registrations#new',    as: :new_user_registration
   end
 
-  resources :tasks do
+  resources :tasks, only: [:index, :new, :create, :edit, :update] do
     member { 
       get :soft_delete
       get "versions", to: "tasks#versions"
